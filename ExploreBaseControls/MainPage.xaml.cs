@@ -13,19 +13,30 @@ namespace ExploreBaseControls
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private CurrencyClient client;
+
         // Конструктор
         public MainPage()
         {
             InitializeComponent();
-
+            client = new CurrencyClient(this);
             // Пример кода для локализации ApplicationBar
             //BuildLocalizedApplicationBar();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void Update()
         {
-            umno.Text = "Кнопка нажата";
+            float rublesInDollar = client.Parse("RUB");
+            Deployment.Current.Dispatcher.BeginInvoke(() => dollarBox.Text = (rublesInDollar.ToString()));
+            Deployment.Current.Dispatcher.BeginInvoke(() => euroBox.Text = ((client.Parse("EUR-USD") * rublesInDollar).ToString()));
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            client.UpdateInfo();
+        }
+
+
 
         // Пример кода для сборки локализованной панели ApplicationBar
         //private void BuildLocalizedApplicationBar()

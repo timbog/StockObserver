@@ -23,18 +23,23 @@ Title="Stock Observer">
             </controls:Panorama.Background>
             <controls:PanoramaItem  
 Header="Курсы валют">
-                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="81*"/>
-                        <RowDefinition Height="94*"/>
-                        <RowDefinition Height="276*"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="75*"/>
+                        <RowDefinition Height="85*"/>
+                        <RowDefinition Height="287*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="55*"/>
-                        <ColumnDefinition Width="101*"/>
-                        <ColumnDefinition Width="55*"/>
+                        <ColumnDefinition Width="37*"/>
+                        <ColumnDefinition Width="51*"/>
+                        <ColumnDefinition Width="52*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Инфо" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Click="Button_Click" />
+                    <TextBlock x:Name="dollarLabel" Grid.Column="0" HorizontalAlignment="Stretch" Grid.Row="1" TextWrapping="Wrap" Text="Доллар:" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="30" Margin="0,15,0,0"/>
+                    <TextBlock x:Name="dollarBox" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" FontSize="30" Margin="0,15,0,0" TextAlignment="Center"/>
+                    <Button Content="Обновить" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click_1" Margin="0,0,0,208" Grid.Row="3" />
+                    <TextBlock x:Name="euroLabel" HorizontalAlignment="Stretch" Margin="0,15,0,0" Grid.Row="2"  TextWrapping="Wrap" Text="Евро: " VerticalAlignment="Stretch" Grid.Column="0" FontSize="30"/>
+                    <TextBlock x:Name="euroBox" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" FontSize="30" Margin="0,15,0,0" TextAlignment="Center"/>
                 </Grid>
             </controls:PanoramaItem>
 
