@@ -27,8 +27,17 @@ namespace ExploreBaseControls
         public void Update()
         {
             float rublesInDollar = client.Parse("RUB");
+            float yuanesInDollar = client.Parse("USD-CNY");
+            float jenesInDollar = client.Parse("USD-JPY");
+            float dollarsInEuro = client.Parse("EUR-USD");
+            float dollarsInPound = client.Parse("GBP-USD");
             Deployment.Current.Dispatcher.BeginInvoke(() => dollarBox.Text = (rublesInDollar.ToString()));
             Deployment.Current.Dispatcher.BeginInvoke(() => euroBox.Text = ((client.Parse("EUR-USD") * rublesInDollar).ToString()));
+            Deployment.Current.Dispatcher.BeginInvoke(() => yuanBox.Text = (yuanesInDollar.ToString()));
+            Deployment.Current.Dispatcher.BeginInvoke(() => jenaBox.Text = (jenesInDollar.ToString()));
+            Deployment.Current.Dispatcher.BeginInvoke(() => dollarBox2.Text = (dollarsInEuro.ToString()));
+            Deployment.Current.Dispatcher.BeginInvoke(() => dollarBox2.Text = (dollarsInEuro.ToString()));
+            Deployment.Current.Dispatcher.BeginInvoke(() => dollarBox3.Text = (dollarsInPound.ToString()));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
