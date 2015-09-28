@@ -63,17 +63,27 @@ Header="Курсы валют">
 
             <controls:PanoramaItem  
 Header="Цены на нефть">
-                <Grid>
+                <Grid Margin="0,0,0,-3">
+
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="79*"/>
-                        <RowDefinition Height="85*"/>
-                        <RowDefinition Height="287*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="62*"/>
+                        <RowDefinition Height="76*"/>
+                        <RowDefinition Height="233*"/>
+
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="55*"/>
-                        <ColumnDefinition Width="236*"/>
-                        <ColumnDefinition Width="55*"/>
+                        <ColumnDefinition Width="37*"/>
+                        <ColumnDefinition Width="51*"/>
+                        <ColumnDefinition Width="52*"/>
                     </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="WTILabel" Grid.Column="0" HorizontalAlignment="Stretch" Grid.Row="0" TextWrapping="Wrap" Text="WTI:" VerticalAlignment="Stretch" TextAlignment="Left" FontSize="30"/>
+                    <TextBlock x:Name="WTIBox" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="0" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Right" Foreground="Aqua" FontWeight="Bold"/>
+                    <TextBlock x:Name="dollarlabel1" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="0" TextWrapping="Wrap" Text=" USD/bbl." VerticalAlignment="Stretch" FontSize="30"  TextAlignment="Left"/>
+                    <TextBlock x:Name="BrentLabel" Grid.Column="0" HorizontalAlignment="Stretch" Grid.Row="1" TextWrapping="Wrap" Text="Brent:" VerticalAlignment="Stretch" TextAlignment="Left" FontSize="30"/>
+                    <TextBlock x:Name="BrentBox" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Right" Foreground="Aqua" FontWeight="Bold"/>
+                    <TextBlock x:Name="dollarlabel2" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="1" TextWrapping="Wrap" Text=" USD/bbl." VerticalAlignment="Stretch" FontSize="30"  TextAlignment="Left"/>
+                    <Button Content="Обновить" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click_1" Grid.Row="2" />
 
                 </Grid>
             </controls:PanoramaItem>

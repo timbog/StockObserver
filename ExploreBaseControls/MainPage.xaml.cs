@@ -14,19 +14,22 @@ namespace ExploreBaseControls
     public partial class MainPage : PhoneApplicationPage
     {
         private CurrencyClient client;
+        private CrudeOilClient clientOil;
 
         // Конструктор
         public MainPage()
         {
             InitializeComponent();
             client = new CurrencyClient(this);
+            clientOil = new CrudeOilClient(this);
+
             // Пример кода для локализации ApplicationBar
             //BuildLocalizedApplicationBar();
         }
 
-        public void Update()
+        public void UpdateCurrency()
         {
-            float rublesInDollar = client.Parse("RUB");
+            float rublesInDollar = client.Parse("USD-RUB");
             float yuanesInDollar = client.Parse("USD-CNY");
             float jenesInDollar = client.Parse("USD-JPY");
             float dollarsInEuro = client.Parse("EUR-USD");
@@ -39,10 +42,18 @@ namespace ExploreBaseControls
             Deployment.Current.Dispatcher.BeginInvoke(() => dollarBox2.Text = (dollarsInEuro.ToString()));
             Deployment.Current.Dispatcher.BeginInvoke(() => dollarBox3.Text = (dollarsInPound.ToString()));
         }
+        public void UpdateOil()
+        {
+            float WTIInDollar = clientOil.Parse("CL1:COM");
+            float BrentInDollar = clientOil.Parse("CO1:COM");
+            Deployment.Current.Dispatcher.BeginInvoke(() => WTIBox.Text = (WTIInDollar.ToString()));
+            Deployment.Current.Dispatcher.BeginInvoke(() => BrentBox.Text = (BrentInDollar.ToString()));
+        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             client.UpdateInfo();
+            clientOil.UpdateInfo();
         }
 
 

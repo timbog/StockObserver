@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Windows
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockObserver", "ExploreBaseControls\StockObserver.csproj", "{575815C6-B35E-4929-9CE8-FE6BE9AB54B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyClient", "EnergyClient\EnergyClient.csproj", "{7FB58375-3CDA-4954-BBED-8CFB17AC387F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,18 @@ Global
 		{575815C6-B35E-4929-9CE8-FE6BE9AB54B2}.Release|x86.ActiveCfg = Release|x86
 		{575815C6-B35E-4929-9CE8-FE6BE9AB54B2}.Release|x86.Build.0 = Release|x86
 		{575815C6-B35E-4929-9CE8-FE6BE9AB54B2}.Release|x86.Deploy.0 = Release|x86
+		{7FB58375-3CDA-4954-BBED-8CFB17AC387F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB58375-3CDA-4954-BBED-8CFB17AC387F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB58375-3CDA-4954-BBED-8CFB17AC387F}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{7FB58375-3CDA-4954-BBED-8CFB17AC387F}.Debug|ARM.Build.0 = Debug|Any CPU
+		{7FB58375-3CDA-4954-BBED-8CFB17AC387F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7FB58375-3CDA-4954-BBED-8CFB17AC387F}.Debug|x86.Build.0 = Debug|Any CPU
+		{7FB58375-3CDA-4954-BBED-8CFB17AC387F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FB58375-3CDA-4954-BBED-8CFB17AC387F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FB58375-3CDA-4954-BBED-8CFB17AC387F}.Release|ARM.ActiveCfg = Release|Any CPU
+		{7FB58375-3CDA-4954-BBED-8CFB17AC387F}.Release|ARM.Build.0 = Release|Any CPU
+		{7FB58375-3CDA-4954-BBED-8CFB17AC387F}.Release|x86.ActiveCfg = Release|Any CPU
+		{7FB58375-3CDA-4954-BBED-8CFB17AC387F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

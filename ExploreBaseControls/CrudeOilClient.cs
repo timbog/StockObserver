@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 using System.Globalization;
 using System.Net;
 using System.IO;
-using System.Text;
 using Microsoft.Phone.Controls;
 
 namespace ExploreBaseControls
 {
-    public class CurrencyClient
+    public class CrudeOilClient
     {
-        private static string[] codes = { "USD-JPY", "EUR-USD", "RUB", "USD-CHF", "GBP-USD" };
-        private const string url = "http://www.bloomberg.com/markets/currencies";
-        private string html {get; set;}
+        private static string[] codes = { "CL1:COM", "CO1:COM" };
+        private const string url = "http://www.bloomberg.com/energy";
+        private string html { get; set; }
         private MainPage page;
 
-        public CurrencyClient(MainPage page)
+        public CrudeOilClient(MainPage page)
         {
             this.page = page;
             UpdateInfo();
@@ -41,8 +40,8 @@ namespace ExploreBaseControls
                     MemoryStream stream = new MemoryStream();
                     response.GetResponseStream().CopyTo(stream);
                     StreamReader reader = new StreamReader(stream);
-                    html = System.Text.Encoding.UTF8.GetString(stream.ToArray(), 0, 123763);
-                    page.UpdateCurrency();
+                    html = Encoding.UTF8.GetString(stream.ToArray(), 0, 68081);
+                    page.UpdateOil();
                 }
                 catch (WebException e)
                 {
@@ -54,8 +53,8 @@ namespace ExploreBaseControls
         public float Parse(String code)
         {
             int a = html.Length;
-            int rubleInd = html.IndexOf(code);
-            string substr = html.Substring(rubleInd);
+            int Ind = html.IndexOf(code);
+            string substr = html.Substring(Ind);
             int valueStartInd = substr.IndexOf("value") + 7;
             int valueEndInd = substr.IndexOf('<', valueStartInd);
             string substr2 = substr.Substring(valueStartInd, valueEndInd - valueStartInd);
