@@ -17,7 +17,7 @@
     <!--LayoutRoot представляет корневую сетку, где размещается все содержимое страницы-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <controls:Panorama  
-Title="Stock Observer">
+Title="Stock Observer" Margin="0,-23,0,23">
             <controls:Panorama.Background>
                 <ImageBrush ImageSource="font.jpg"/>
             </controls:Panorama.Background>
@@ -39,13 +39,13 @@ Header="Курсы валют">
                         <ColumnDefinition Width="51*"/>
                         <ColumnDefinition Width="52*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock x:Name="dollarLabel" Grid.Column="0" HorizontalAlignment="Stretch" Grid.Row="0" TextWrapping="Wrap" Text="Доллар:" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="30"/>
+                    <TextBlock x:Name="dollarLabel" Grid.Column="0" HorizontalAlignment="Stretch" Grid.Row="0" TextWrapping="Wrap" Text="Доллар:" VerticalAlignment="Stretch" TextAlignment="Center" FontSize="30" Grid.ColumnSpan="2" Margin="2,-4,151,4"/>
                     <TextBlock x:Name="dollarBox" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="0" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Right" Foreground="Aqua" FontWeight="Bold"/>
                     <TextBlock x:Name="rublelabel1" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="0" TextWrapping="Wrap" Text=" рублей" VerticalAlignment="Stretch" FontSize="30"  TextAlignment="Left"/>
-                    <Button Content="Обновить" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click_1" Grid.Row="2" />
-                    <TextBlock x:Name="euroLabel" HorizontalAlignment="Stretch" Grid.Row="1"  TextWrapping="Wrap" Text="Евро: " VerticalAlignment="Stretch" Grid.Column="0" FontSize="30"/>
+                    <Button Content="Обновить" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click_1" Grid.Row="1" Grid.ColumnSpan="2" Margin="122,56,31,5" Grid.RowSpan="2" />
+                    <TextBlock x:Name="euroLabel" HorizontalAlignment="Stretch"  TextWrapping="Wrap" Text="Евро: " VerticalAlignment="Stretch" Grid.Column="0" FontSize="30" Grid.ColumnSpan="2" Margin="2,36,151,4" Grid.RowSpan="2"/>
                     <TextBlock x:Name="euroBox" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Right" Foreground="Aqua" FontWeight="Bold" />
-                    <TextBlock x:Name="rublelabel2" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="1" TextWrapping="Wrap" Text=" рублей" VerticalAlignment="Stretch" FontSize="30"  TextAlignment="Left"/>
+                    <TextBlock x:Name="rublelabel2" Grid.Column="2" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text=" рублей" VerticalAlignment="Stretch" FontSize="30"  TextAlignment="Left" Margin="9,0,47,10" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.396"/>
                     <TextBlock x:Name="dollarLabel2" Grid.Column="0" HorizontalAlignment="Stretch" Grid.Row="3" TextWrapping="Wrap" Text="Доллар:" VerticalAlignment="Stretch" FontSize="20"  TextAlignment="Left"/>
                     <TextBlock x:Name="yuanLabel" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="3" TextWrapping="Wrap" Text=" юаня (CNY)" VerticalAlignment="Stretch" FontSize="20"  TextAlignment="Left" Grid.ColumnSpan="2" Margin="66,0,0,0"/>
                     <TextBlock x:Name="yuanBox" HorizontalAlignment="Stretch" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" FontSize="20" TextAlignment="Right" Foreground="Aqua" FontWeight="Bold" Margin="90,0,87,0" Grid.ColumnSpan="2" />
@@ -66,10 +66,11 @@ Header="Цены на нефть">
                 <Grid Margin="0,0,0,-3">
 
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="40*"/>
-                        <RowDefinition Height="62*"/>
-                        <RowDefinition Height="76*"/>
-                        <RowDefinition Height="233*"/>
+                        <RowDefinition Height="44*"/>
+                        <RowDefinition Height="69*"/>
+                        <RowDefinition Height="18*"/>
+                        <RowDefinition Height="66*"/>
+                        <RowDefinition Height="257*"/>
 
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -80,10 +81,10 @@ Header="Цены на нефть">
                     <TextBlock x:Name="WTILabel" Grid.Column="0" HorizontalAlignment="Stretch" Grid.Row="0" TextWrapping="Wrap" Text="WTI:" VerticalAlignment="Stretch" TextAlignment="Left" FontSize="30"/>
                     <TextBlock x:Name="WTIBox" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="0" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Right" Foreground="Aqua" FontWeight="Bold"/>
                     <TextBlock x:Name="dollarlabel1" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="0" TextWrapping="Wrap" Text=" USD/bbl." VerticalAlignment="Stretch" FontSize="30"  TextAlignment="Left"/>
-                    <TextBlock x:Name="BrentLabel" Grid.Column="0" HorizontalAlignment="Stretch" Grid.Row="1" TextWrapping="Wrap" Text="Brent:" VerticalAlignment="Stretch" TextAlignment="Left" FontSize="30"/>
-                    <TextBlock x:Name="BrentBox" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Right" Foreground="Aqua" FontWeight="Bold"/>
-                    <TextBlock x:Name="dollarlabel2" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="1" TextWrapping="Wrap" Text=" USD/bbl." VerticalAlignment="Stretch" FontSize="30"  TextAlignment="Left"/>
-                    <Button Content="Обновить" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click_1" Grid.Row="2" />
+                    <TextBlock x:Name="BrentLabel" Grid.Column="0" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="Brent:" VerticalAlignment="Stretch" TextAlignment="Left" FontSize="30" Margin="-2,37,2,7" Grid.RowSpan="2"/>
+                    <TextBlock x:Name="BrentBox" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Right" Foreground="Aqua" FontWeight="Bold" Grid.ColumnSpan="2" Margin="110,36,1,8" Grid.RowSpan="2"/>
+                    <TextBlock x:Name="dollarlabel2" Grid.Column="1" HorizontalAlignment="Stretch" TextWrapping="Wrap" Text=" USD/bbl." VerticalAlignment="Stretch" FontSize="30"  TextAlignment="Left" Grid.ColumnSpan="2" Margin="152,37,1,7" Grid.RowSpan="2"/>
+                    <Button Content="Обновить" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Button_Click_1" Grid.Row="1" Margin="137,47,13,31" Grid.RowSpan="3" Grid.ColumnSpan="2" />
 
                 </Grid>
             </controls:PanoramaItem>
@@ -101,7 +102,7 @@ Header="Инфо">
                         <RowDefinition Height="110*"/>
                         <RowDefinition Height="259*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock x:Name="dollarBoxh3" Grid.Column="0" HorizontalAlignment="Stretch" Grid.Row="0" TextWrapping="Wrap" Text="Используются данные агенства Bloomberg" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="2"   />
+                    <TextBlock x:Name="dollarBoxh3" Grid.Column="0" HorizontalAlignment="Stretch" Grid.Row="0" TextWrapping="Wrap" Text="Используются данные агенства Bloomberg" VerticalAlignment="Stretch" FontSize="30" TextAlignment="Left" Grid.ColumnSpan="2" Grid.RowSpan="3" Margin="18,1,-18,109"   />
                 </Grid>
             </controls:PanoramaItem>
         </controls:Panorama>
