@@ -22,9 +22,8 @@ namespace ExploreBaseControls
             InitializeComponent();
             client = new CurrencyClient(this);
             clientOil = new CrudeOilClient(this);
-
-            // Пример кода для локализации ApplicationBar
-            //BuildLocalizedApplicationBar();
+            var thread = new System.Threading.Thread(BackGroundUpdate);
+            thread.Start();
         }
 
         public void UpdateCurrency()
@@ -52,26 +51,22 @@ namespace ExploreBaseControls
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            Update();
+        }
+
+        public void Update()
+        {
             client.UpdateInfo();
             clientOil.UpdateInfo();
         }
 
-
-
-        // Пример кода для сборки локализованной панели ApplicationBar
-        //private void BuildLocalizedApplicationBar()
-        //{
-        //    // Установка в качестве ApplicationBar страницы нового экземпляра ApplicationBar.
-        //    ApplicationBar = new ApplicationBar();
-
-        //    // Создание новой кнопки и установка текстового значения равным локализованной строке из AppResources.
-        //    ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
-        //    appBarButton.Text = AppResources.AppBarButtonText;
-        //    ApplicationBar.Buttons.Add(appBarButton);
-
-        //    // Создание нового пункта меню с локализованной строкой из AppResources.
-        //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-        //    ApplicationBar.MenuItems.Add(appBarMenuItem);
-        //}
+        public void BackGroundUpdate()
+        {
+            while (true)
+            {
+                System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(30)).Wait();
+                Update();
+            }
+        }
     }
 }
