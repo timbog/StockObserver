@@ -19,11 +19,6 @@ namespace ExploreBaseControls
             return url;
         }
 
-        protected override int GetLength()
-        {
-            return 68081;
-        }
-
         protected override void UpdatePage()
         {
             page.UpdateOil();

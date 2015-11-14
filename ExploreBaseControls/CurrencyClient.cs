@@ -20,11 +20,6 @@ namespace ExploreBaseControls
             return url;
         }
 
-        protected override int GetLength()
-        {
-            return 123763;
-        }
-
         protected override void UpdatePage()
         {
             page.UpdateCurrency();

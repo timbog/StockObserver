@@ -18,8 +18,6 @@ namespace ExploreBaseControls
 
         protected abstract void UpdatePage();
 
-        protected abstract int GetLength();
-
         public Client(MainPage page)
         {
             this.page = page;
@@ -42,7 +40,8 @@ namespace ExploreBaseControls
                     MemoryStream stream = new MemoryStream();
                     response.GetResponseStream().CopyTo(stream);
                     StreamReader reader = new StreamReader(stream);
-                    html = Encoding.UTF8.GetString(stream.ToArray(), 0, GetLength());
+                    int length = stream.ToArray().Length;
+                    html = Encoding.UTF8.GetString(stream.ToArray(), 0, length);
                     UpdatePage();
                 }
                 catch (WebException e)
