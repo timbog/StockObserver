@@ -46,6 +46,7 @@ namespace ExploreBaseControls
                 }
                 catch (WebException e)
                 {
+                    page.ShowError();
                     return;
                 }
             }

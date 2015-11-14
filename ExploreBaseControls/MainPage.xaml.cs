@@ -8,6 +8,9 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using ExploreBaseControls.Resources;
+using Microsoft.Phone.Net.NetworkInformation;
+using System.Collections.ObjectModel;
+using Microsoft.Phone.Tasks;
 
 namespace ExploreBaseControls
 {
@@ -15,11 +18,17 @@ namespace ExploreBaseControls
     {
         private CurrencyClient client;
         private CrudeOilClient clientOil;
+        private bool messageShown;
+
+        public ObservableCollection<string> Changes { get; set; }
+
+        public ObservableCollection<string> NetworkInterfaces { get; set; }
 
         // Конструктор
         public MainPage()
         {
             InitializeComponent();
+            messageShown = false;
             client = new CurrencyClient(this);
             clientOil = new CrudeOilClient(this);
             var thread = new System.Threading.Thread(BackGroundUpdate);
@@ -58,6 +67,16 @@ namespace ExploreBaseControls
         {
             client.UpdateInfo();
             clientOil.UpdateInfo();
+        }
+
+        public void ShowError()
+        {
+            if (!messageShown)
+            {
+                Deployment.Current.Dispatcher.BeginInvoke(() => MessageBox.Show("Нет подключения к Internet",
+                    "Ошибка", MessageBoxButton.OKCancel));
+            }
+            messageShown = !messageShown;
         }
 
         public void BackGroundUpdate()
