@@ -7,7 +7,6 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using ExploreBaseControls.Resources;
-
 namespace ExploreBaseControls
 {
     public partial class App : Application

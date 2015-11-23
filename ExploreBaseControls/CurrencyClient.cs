@@ -11,7 +11,7 @@ using Microsoft.Phone.Controls;
 
 namespace ExploreBaseControls
 {
-    public class CurrencyClient:Client
+    public class CurrencyClient : Client
     {
         private const string url = "http://www.bloomberg.com/markets/currencies";
 
@@ -25,7 +25,8 @@ namespace ExploreBaseControls
             page.UpdateCurrency();
         }
 
-        public CurrencyClient(MainPage page): base(page)
+        public CurrencyClient(MainPage page)
+            : base(page)
         {
         }
     }

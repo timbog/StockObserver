@@ -30,7 +30,8 @@ namespace ExploreBaseControls
             request.BeginGetResponse(GetData, request);
         }
 
-        public void GetData(IAsyncResult result) {
+        public void GetData(IAsyncResult result)
+        {
             HttpWebRequest request = result.AsyncState as HttpWebRequest;
             if (request != null)
             {

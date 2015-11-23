@@ -11,6 +11,7 @@ using ExploreBaseControls.Resources;
 using Microsoft.Phone.Net.NetworkInformation;
 using System.Collections.ObjectModel;
 using Microsoft.Phone.Tasks;
+using System.Windows.Threading;
 
 namespace ExploreBaseControls
 {
@@ -19,6 +20,7 @@ namespace ExploreBaseControls
         private CurrencyClient client;
         private CrudeOilClient clientOil;
         private bool messageShown;
+        private DispatcherTimer dispatcherTimer;
 
         public ObservableCollection<string> Changes { get; set; }
 
@@ -31,8 +33,10 @@ namespace ExploreBaseControls
             messageShown = false;
             client = new CurrencyClient(this);
             clientOil = new CrudeOilClient(this);
-            var thread = new System.Threading.Thread(BackGroundUpdate);
-            thread.Start();
+            dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = TimeSpan.FromSeconds(30);
+            dispatcherTimer.Start();
         }
 
         public void UpdateCurrency()
@@ -79,13 +83,9 @@ namespace ExploreBaseControls
             messageShown = !messageShown;
         }
 
-        public void BackGroundUpdate()
+        public void dispatcherTimer_Tick(object sender, EventArgs e)
         {
-            while (true)
-            {
-                System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(30)).Wait();
-                Update();
-            }
+            Update();
         }
     }
 }

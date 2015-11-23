@@ -10,7 +10,7 @@ using Microsoft.Phone.Controls;
 
 namespace ExploreBaseControls
 {
-    public class CrudeOilClient:Client
+    public class CrudeOilClient : Client
     {
         private const string url = "http://www.bloomberg.com/energy";
 
@@ -24,7 +24,8 @@ namespace ExploreBaseControls
             page.UpdateOil();
         }
 
-        public CrudeOilClient(MainPage page) : base(page)
+        public CrudeOilClient(MainPage page)
+            : base(page)
         {
         }
     }
