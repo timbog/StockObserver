@@ -5,7 +5,7 @@
     <Language code="ru" />
     <Language code="ru-RU" />
   </Languages>
-  <App xmlns="" ProductID="{575815c6-b35e-4929-9ce8-fe6be9ab54b2}" Title="StockObserver" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Bogdan Timofeev" Description="Приложение для обзора текущих курсов валют (по отношению к рублю) и цен на нефть" SDOptOut="false" BackUpOptOut="false" Publisher="Bogdan Timofeev" PublisherID="{cb67f4e3-d287-4b33-a1f2-f0700d71a3f6}">
+  <App xmlns="" ProductID="{575815c6-b35e-4929-9ce8-fe6be9ab54b2}" Title="StockObserver" RuntimeType="Silverlight" Version="1.0.0.1" Genre="apps.normal" Author="Bogdan Timofeev" Description="Приложение для обзора текущих курсов валют (по отношению к рублю) и цен на нефть" SDOptOut="false" BackUpOptOut="false" Publisher="Bogdan Timofeev" PublisherID="{cb67f4e3-d287-4b33-a1f2-f0700d71a3f6}">
     <IconPath IsRelative="true" IsResource="false">logo.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />

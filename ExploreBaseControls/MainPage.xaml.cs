@@ -87,5 +87,17 @@ namespace ExploreBaseControls
         {
             Update();
         }
+
+        private void Application_Deactivated(object sender, DeactivatedEventArgs e)
+        {
+            dispatcherTimer.Stop();
+        }
+
+        private void Application_Activated(object sender, ActivatedEventArgs e)
+        {
+            dispatcherTimer.Start();
+        }
+
+
     }
 }
